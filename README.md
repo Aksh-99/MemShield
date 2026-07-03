@@ -1,15 +1,15 @@
-# MemShield
+# MemShield 🛡️
 Detects malware from computer memory snapshots using machine learning.
 
 ## Objective
 Malware behaves differently from normal programs in memory. MemShield analyzes 55 memory activity features extracted from system memory dumps and classifies them as **benign or malicious** using Logistic Regression.
 
 ## Dataset
-**CIC-MalMem-2022** — Canadian Institute for Cybersecurity  
-- 58,596 memory dump records  
-- 55 numerical features extracted from real-world malware samples  
-- Classes: Benign, Ransomware, Spyware, Trojan Horse  
-- Balanced dataset: 50% benign, 50% malicious  
+**CIC-MalMem-2022** — Canadian Institute for Cybersecurity
+- 58,596 memory dump records
+- 55 numerical features extracted from real-world malware samples
+- Classes: Benign, Ransomware, Spyware, Trojan Horse
+- Balanced dataset: 50% benign, 50% malicious
 
 ## Tech Stack
 - Python
@@ -34,6 +34,10 @@ Malware behaves differently from normal programs in memory. MemShield analyzes 5
 | False Negatives (missed malware) | 22 |
 | False Positives (false alarms) | 148 |
 
+## Confusion Matrix
+![Confusion Matrix](confusion_matrix.png)
+
+With only 22 false negatives out of 29,298 malware samples, the model is highly sensitive to real threats.
 
 ## Model Explainability (SHAP)
 The model doesn't just predict — it explains *why* a program is flagged as malware.
@@ -60,4 +64,4 @@ python explain.py
 
 ## Dataset Source
 Carrier, T. et al. (2022). CIC-MalMem-2022. Canadian Institute for Cybersecurity.  
-https://www.unb.ca/cic/datasets/malmem-2022.html
+https://www.unb.ca/cic/datasets/malmem-2022.htmlsets/malmem-2022.html
