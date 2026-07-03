@@ -7,6 +7,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
+import pickle
 
 #Load the data
 df = pd.read_csv('Obfuscated-MalMem2022.csv')
@@ -62,5 +63,10 @@ sns.heatmap(
     xticklabels=['Benign', 'Malware'],
     yticklabels=['Benign', 'Malware']
 )
+plt.savefig('confusion_matrix.png', bbox_inches='tight')
 
+#Save the model
+with open('memshield_model.pkl', 'wb') as f:
+    pickle.dump({'model': model, 'scaler': scaler}, f)
 
+print("Model saved!")
