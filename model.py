@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import pickle
-
+import matplotlib.pyplot as plt
 #Load the data
 df = pd.read_csv('Obfuscated-MalMem2022.csv')
 
